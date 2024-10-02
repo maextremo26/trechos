@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción de Trechos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .trecho-info {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .trecho-image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        // Función para mostrar la información y la imagen de cada trecho
+        function mostrarTrecho(trecho) {
+            const trechoInfo = document.getElementById("trechoInfo");
+            let contenido = "";
+            let imagen = "";
+
+            switch (trecho) {
+                case 1:
+                    contenido = `
+                        <h2>Trecho 1</h2>
+                        <ul>
+                            <li>1 Tenda</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>10 Conão</li>
+                            <li>10 Cavaletes</li>
+                            <li>10 Bases</li>
+                            <li>10 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372934823-1479a6a8-2177-455c-b5fc-486ce05e1ccd.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODQ4MjQsIm5iZiI6MTcyNzg4NDUyNCwicGF0aCI6Ii81OTUxMDMxMC8zNzI5MzQ4MjMtMTQ3OWE2YTgtMjE3Ny00NTVjLWI1ZmMtNDg2Y2UwNWUxY2NkLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE1NTUyNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTU5MWMzZGY5ZmI0OWZhYjE0OTk2OTllMTg3ZWI1N2VlMWM3ZTFkMDEwYTQwNjI0NTk2MTc2YWNjOWZhZmI3NDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.fcHmoIOB4iXzZ-90mBKD-BBgTag75t09qU-kt3P3gHk"; // Cambia por el enlace de la imagen
+                    break;
+                case 2:
+                    contenido = `
+                        <h2>Trecho 2</h2>
+                        <ul>
+                            <li>1 Tenda</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>20 Conão</li>
+                            <li>20 Cavaletes</li>
+                            <li>20 Bases</li>
+                            <li>20 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372938979-ae13a739-f4af-4440-a13d-e0853f70db28.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODU0MDIsIm5iZiI6MTcyNzg4NTEwMiwicGF0aCI6Ii81OTUxMDMxMC8zNzI5Mzg5NzktYWUxM2E3MzktZjRhZi00NDQwLWExM2QtZTA4NTNmNzBkYjI4LkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MDUwMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJkMzgzMmQ2MTMxOGQwYmFkMmZhYTRlOTI2NTJhYjcwOGY3NDljYzQ4NzgyZGQzNDI4YWZiMTM0NmJlYzNjNjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.NtHh_5D-xqnLMmJGAmkvoVMb0crAObgn-3MaU3BNqbs"; // Cambia por el enlace de la imagen
+                    break;
+                case 3:
+                    contenido = `
+                        <h2>Trecho 3</h2>
+                        <ul>
+                            <li>1 Tenda</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372939844-30e79870-5bf9-4dae-8a32-a06db54f0a7e.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODU1NTYsIm5iZiI6MTcyNzg4NTI1NiwicGF0aCI6Ii81OTUxMDMxMC8zNzI5Mzk4NDQtMzBlNzk4NzAtNWJmOS00ZGFlLThhMzItYTA2ZGI1NGYwYTdlLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MDczNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc4NDE2YWQwMWFhOThjOWNkNGI3N2RlZWY5OTVjM2QxZjUwZTU3Y2E3ZmZiOTM2YzE2MzVmYTFjNjZiNzkzMTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.FSB6DHUaLBq2rTF98LZseyWQC8y_S5uH5CRIhr2Z530"; // Cambia por el enlace de la imagen
+                    break;
+                case 4:
+                    contenido = `
+                        <h2>Trecho 4</h2>
+                        <ul>
+                            <li>1 Tenda</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>29 Conão</li>
+                            <li>62 Cavaletes</li>
+                            <li>67 Bases</li>
+                            <li>1000 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372940267-732fd994-c135-415a-864f-f1886b735d3e.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODU2MzksIm5iZiI6MTcyNzg4NTMzOSwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDAyNjctNzMyZmQ5OTQtYzEzNS00MTVhLTg2NGYtZjE4ODZiNzM1ZDNlLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MDg1OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVlNzMyNzk5NGRmN2VkZjM4ZTMxYjkwMDgwMWMwZTNkZmQ1YTQwNGYxNDlhYzliMDk4NDFjYzM3MGQzMDk4MDImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.jb6922EO5ySy7WzbWFo4141bBw3rfjEXI7Cev3EVhGA"; // Imagen del trecho 4
+                    break;
+                case 5:
+                    contenido = `
+                        <h2>Trecho 5</h2>
+                        <ul>
+                            <li>5 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372940838-ab045547-9103-4bdd-8b0a-6a6ce1683ed9.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODY0MDIsIm5iZiI6MTcyNzg4NjEwMiwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDA4MzgtYWIwNDU1NDctOTEwMy00YmRkLThiMGEtNmE2Y2UxNjgzZWQ5LkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjE0MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFiYmNkMWZhZGE3MmQxOTNhOWQxZWJmYWFlOWM4YmYyYWEyZWRhYzkzN2IyZTI0ZjFkZmVmYjlhOTAxNGRjYzImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.P6pKqhtFcFdKhABYlTqQiL-2y-HccXy4XxQzQaZmAf8"; // Cambia por el enlace de la imagen
+                    break;
+                case 6:
+                    contenido = `
+                        <h2>Trecho 6</h2>
+                        <ul>
+                            <li>6 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372941224-b066e418-e282-414a-a327-9f118f9be537.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODYzNzIsIm5iZiI6MTcyNzg4NjA3MiwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDEyMjQtYjA2NmU0MTgtZTI4Mi00MTRhLWEzMjctOWYxMThmOWJlNTM3LkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjExMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThiMjg0Y2NjOGVhZTcwOTAxM2I2YmJlZjgyNmYxZDJmNGQ4ZmY1ZGM5ZTAyZWYzMjhmYWE2NmYxYzJiOTQ0MDUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.1kXfaedJeE-yaSOH0bkzBpltegaNZPfNm3IeuL8EVcc"; // Cambia por el enlace de la imagen
+                    break;
+                case 7:
+                    contenido = `
+                        <h2>Trecho 7</h2>
+                        <ul>
+                            <li>7 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372944233-180a8154-9ff0-4e96-b8ff-9bc094e3e3ca.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODYzMDcsIm5iZiI6MTcyNzg4NjAwNywicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDQyMzMtMTgwYTgxNTQtOWZmMC00ZTk2LWI4ZmYtOWJjMDk0ZTNlM2NhLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjAwN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI0YTE0YWUyOWIxYmIwNGUyMmY3YTE2MjIzZWE1Nzg1MThhZDdjY2M4ZWY4ZWVhMTA5ZWZmM2Q2MGRlODQwZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.uy0VI745lgJK9izdAJ-YIMnokOMCIqSPvmaFuQapRnY"; // Cambia por el enlace de la imagen
+                    break;
+                case 8:
+                    contenido = `
+                        <h2>Trecho 8</h2>
+                        <ul>
+                            <li>8 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372946225-12e39ea1-e06a-452e-b3a3-5304425cc3eb.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODY0NzYsIm5iZiI6MTcyNzg4NjE3NiwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDYyMjUtMTJlMzllYTEtZTA2YS00NTJlLWIzYTMtNTMwNDQyNWNjM2ViLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjI1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY2NTc5YTY0N2VlNGEyOWU5ZGVjOTg0NzlkODk4NDZlNDU0YjljYWU5ZTA4OTNkNDQ0MmQ1ZmVjYjcwMDM5ODImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.1qwyDjHwNLsQj4BY-BXq7ZXf5j2dC95cojJms-99Fzc"; // Cambia por el enlace de la imagen
+                    break;
+                case 9:
+                    contenido = `
+                        <h2>Trecho 9</h2>
+                        <ul>
+                            <li>9 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372946597-39a17817-9439-402f-9b19-68f2bd240021.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODY1MjUsIm5iZiI6MTcyNzg4NjIyNSwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDY1OTctMzlhMTc4MTctOTQzOS00MDJmLTliMTktNjhmMmJkMjQwMDIxLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjM0NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTgyMDc1MzNlYmFmMTYxYWM5ZGMyNTBjMTQ5ZDk4MTY4MzgzZjQ3NzM5ZDAyNDQ1ZmFjMzM0Y2E2ODA3MDQ2M2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.4bnVqXmh1qlicBPWOdqrumAVt4HZo4PvR6rm6mjGXXQ"; // Cambia por el enlace de la imagen
+                    break;
+                case 10:
+                    contenido = `
+                        <h2>Trecho 10</h2>
+                        <ul>
+                            <li>10 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372947152-9dd7be1e-661a-4a02-8781-928569a1d39b.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODY2MDUsIm5iZiI6MTcyNzg4NjMwNSwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDcxNTItOWRkN2JlMWUtNjYxYS00YTAyLTg3ODEtOTI4NTY5YTFkMzliLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjUwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNkZjZkOWVkOGUzMTBjYTFlNTI3NWU4MTdhZTBhZjhlNjc5YjJmM2NmZTYyY2RhMmM2YzNlMWQyMjdiMDZhMjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.V0BIdPNX2j4tW0ZSqMkzOUswvYHLN0CQ4iSLSbD4pcE"; // Cambia por el enlace de la imagen
+                    break;
+                case 11:
+                    contenido = `
+                        <h2>Trecho 11</h2>
+                        <ul>
+                            <li>11 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372947480-99c679c7-6010-40d7-9d6f-a405e1af4f4c.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODY2NTUsIm5iZiI6MTcyNzg4NjM1NSwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDc0ODAtOTljNjc5YzctNjAxMC00MGQ3LTlkNmYtYTQwNWUxYWY0ZjRjLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjU1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNlNGViOTBiZDRiMGE1YTc2ZGMwMzJjMmY3YTI2ZWVkYzU3ZTc0MjVkYmEyNGU3ZTFkZjBjNmM5YjY0NDUyNTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Pj5FHMraoJ4jYYXwtaiEcUwS-gKYQUw9BkCh0zIb-m4"; // Cambia por el enlace de la imagen
+                    break;
+                case 12:
+                    contenido = `
+                        <h2>Trecho 12</h2>
+                        <ul>
+                            <li>12 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372947765-19d7da80-9a70-4a45-92fa-2b0fd2d7151e.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODY3MDIsIm5iZiI6MTcyNzg4NjQwMiwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDc3NjUtMTlkN2RhODAtOWE3MC00YTQ1LTkyZmEtMmIwZmQyZDcxNTFlLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjY0MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ0MmM1NTU1NGRkM2RiMGYzYzI3NTdhZDhkYjg1NzhlYWUwZjYzMzdjMjkyMmE0ODBmZGU3NzliNTgyZjkyYTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.8jDhCHRmgm8hxE2VeIdb-2_P_tqqblW1x4wupX67zBk"; // Cambia por el enlace de la imagen
+                    break;
+                case 13:
+                    contenido = `
+                        <h2>Trecho 13</h2>
+                        <ul>
+                            <li>13 Tendas</li>
+                            <li>1 Bicicleta</li>
+                            <li>1 Mesa</li>
+                            <li>4 Cadeiras</li>
+                            <li>30 Conão</li>
+                            <li>30 Cavaletes</li>
+                            <li>30 Bases</li>
+                            <li>30 Cones</li>
+                        </ul>
+                    `;
+                    imagen = "https://private-user-images.githubusercontent.com/59510310/372948103-dda1d6cb-37a3-49fa-8f4a-71857f790e7d.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc4ODY3NTQsIm5iZiI6MTcyNzg4NjQ1NCwicGF0aCI6Ii81OTUxMDMxMC8zNzI5NDgxMDMtZGRhMWQ2Y2ItMzdhMy00OWZhLThmNGEtNzE4NTdmNzkwZTdkLkpQRz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMDIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDAyVDE2MjczNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBlYzM2OTY1MzMzNGVmOGVjOWJkNWQzOTliYWNmYzJiNDdiZTg3YzYzODJlMGI1ODA1Nzc5MWE1NGU1Zjc4YzEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.gOGWI_6ivUjGad2t7gEP6hJUH1bUqCqEmx_8yVeJyhU"; // Cambia por el enlace de la imagen
+                    break;
+                default:
+                    contenido = `<p>Trecho no encontrado.</p>`;
+                    break;
+            }
+
+            trechoInfo.innerHTML = contenido + `<img src="${imagen}" alt="Imagen del Trecho ${trecho}" class="trecho-image">`;
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Descrição de Trechos</h1>
+
+    <!-- Botones para seleccionar el trecho -->
+    <div>
+        <button onclick="mostrarTrecho(1)">Trecho 1</button>
+        <button onclick="mostrarTrecho(2)">Trecho 2</button>
+        <button onclick="mostrarTrecho(3)">Trecho 3</button>
+        <button onclick="mostrarTrecho(4)">Trecho 4</button>
+        <button onclick="mostrarTrecho(5)">Trecho 5</button>
+        <button onclick="mostrarTrecho(6)">Trecho 6</button>
+        <button onclick="mostrarTrecho(7)">Trecho 7</button>
+        <button onclick="mostrarTrecho(8)">Trecho 8</button>
+        <button onclick="mostrarTrecho(9)">Trecho 9</button>
+        <button onclick="mostrarTrecho(10)">Trecho 10</button>
+        <button onclick="mostrarTrecho(11)">Trecho 11</button>
+        <button onclick="mostrarTrecho(12)">Trecho 12</button>
+        <button onclick="mostrarTrecho(13)">Trecho 13</button>
+    </div>
+
+    <!-- Div donde se mostrará la información del trecho seleccionado -->
+    <div id="trechoInfo" class="trecho-info">
+        <p>Selecciona un trecho para ver su descripción.</p>
+    </div>
+
+</body>
+</html>
